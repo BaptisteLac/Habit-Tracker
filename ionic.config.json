@@ -1,0 +1,7 @@
+{
+  "name": "Habit Tracker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
