@@ -1,0 +1,41 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="trainingForm" class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Temps d'exercice</ion-label>
+      <ion-input formControlName="exerciseTime" max="300" min="1" type="number"></ion-input>
+      @if (exerciseTimeInvalid()) {
+        <ion-note slot="error">
+          Le temps d'exercice est requis
+        </ion-note>
+      }
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Temps de repos</ion-label>
+      <ion-input formControlName="restTime" max="300" min="1" type="number"></ion-input>
+      @if (restTimeInvalid()) {
+        <ion-note slot="error">
+          Le temps de repos est requis
+        </ion-note>
+      }
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Répétitions</ion-label>
+      <ion-input formControlName="repetitions" max="20" min="1" type="number"></ion-input>
+    </ion-item>
+    @if (repetitionsInvalid()) {
+      <ion-note slot="error">
+        Le nombre de répétitions est requis
+      </ion-note>
+    }
+  </ion-list>
+
+  <ion-button expand="block" fill="outline">
+    Charger le dernier entrainement
+  </ion-button>
+
+  <ion-button expand="block" type="submit">
+    Commencer l'entrainement
+  </ion-button>
+</form>
