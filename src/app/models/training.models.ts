@@ -1,10 +1,12 @@
+import {TrainingStatus} from "../enums/training-status";
+
 export interface TrainingSettings {
   exerciseTime: number;
   restTime: number;
   repetitions: number
 }
 
-export interface TraingSession extends TrainingSettings {
+export interface TrainingSession extends TrainingSettings {
   id: string;
   date: Date;
   totalActiveTime: number;
@@ -16,8 +18,6 @@ export interface TrainingStatsGlobal {
   totalSessions: number;
   lastTrainingDate: Date
 }
-
-export type TrainingStatus = 'none | preparing | exercise | rest | completed'
 
 export interface TrainingProgress {
   currentRepetition: number;
